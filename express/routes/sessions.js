@@ -6,7 +6,6 @@ var { checkUserExists } = require('../utils/driveUtils');
 
 router.post('/new', function(req, res, next) {
   try {
-    // console.log(req.app.get('drive'))
     authenticate(findUser);
 
     async function findUser(auth) {

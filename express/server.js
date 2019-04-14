@@ -12,8 +12,8 @@ const accountsRouter = require('./routes/accounts');
 require('dotenv').config();
 
 app.use(helmet());
-
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/.netlify/functions/server', appRouter);
 app.use('/.netlify/functions/server/api/accounts', accountsRouter);
 app.use('/.netlify/functions/server/api/sessions', sessionsRouter);
